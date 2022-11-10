@@ -93,33 +93,63 @@ function App() {
     }
   };
 
+  const display = () => {
+    switch(true) {
+      case provider !== undefined && walletKey !== undefined:
+        return(
+          <section className='App-cont'>
+            <p>Connected account</p>
+          </section>
+        )
+      case provider !== undefined && !walletKey:
+        return(
+          <section className='App-cont'>
+            <button
+              onClick={connectWallet}
+              className="App-btn"
+            >
+              Connect Wallet
+            </button>
+          </section>
+        )
+      default:
+        return(
+          <section className='App-cont'>
+            <p>
+              No provider found. Install{" "}
+              <a href="https://phantom.app/">Phantom Browser extension</a>
+            </p>
+          </section>
+        )
+    }
+  }
+
 	// HTML code for the app
   return (
     <div className="App">
-      <header className="App-header">
-        <h2>Connect to Phantom Wallet</h2>
-      </header>
-      {provider && !walletKey && (
-          <button
-            style={{
-              fontSize: "16px",
-              padding: "15px",
-              fontWeight: "bold",
-              borderRadius: "5px",
-            }}
-            onClick={connectWallet}
-          >
-            Connect Wallet
-          </button>
-        )}
-        {provider && walletKey && <p>Connected account</p> }
+      <main className='App-main'>
+        <header className="App-header">
+          <h2>Connect to Phantom Wallet</h2>
+        </header>
 
-        {!provider && (
-          <p>
-            No provider found. Install{" "}
-            <a href="https://phantom.app/">Phantom Browser extension</a>
-          </p>
-        )}
+        {display()}
+
+        {/* {provider && !walletKey && (
+            <button
+              onClick={connectWallet}
+            >
+              Connect Wallet
+            </button>
+          )}
+          {provider && walletKey && <p>Connected account</p> }
+  
+          {!provider && (
+            <p>
+              No provider found. Install{" "}
+              <a href="https://phantom.app/">Phantom Browser extension</a>
+            </p>
+          )} */}
+      </main>
     </div>
   );
 }
