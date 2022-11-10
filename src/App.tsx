@@ -93,6 +93,24 @@ function App() {
     }
   };
 
+  const disconnectWallet = async () => {
+    // @ts-ignore
+    const { solana } = window;
+
+		// checks if phantom wallet exists
+    if (solana) {
+      try {
+				// disconnects wallet and returns response which includes the wallet public key
+        const response = await solana.disconnect();
+        console.log('wallet disconnected');
+				// update walletKey to be the public key
+        setWalletKey(undefined);
+      } catch (err) {
+      // { code: 4001, message: 'User rejected the request.' }
+      }
+    }
+  }
+
   const display = () => {
     switch(true) {
       case provider !== undefined && walletKey !== undefined:
