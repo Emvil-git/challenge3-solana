@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/challenge3-solana/static/css/main.07014a09.css",
+    "main.js": "/challenge3-solana/static/js/main.5be1b935.js",
+    "static/js/787.72590173.chunk.js": "/challenge3-solana/static/js/787.72590173.chunk.js",
+    "index.html": "/challenge3-solana/index.html",
+    "main.07014a09.css.map": "/challenge3-solana/static/css/main.07014a09.css.map",
+    "main.5be1b935.js.map": "/challenge3-solana/static/js/main.5be1b935.js.map",
+    "787.72590173.chunk.js.map": "/challenge3-solana/static/js/787.72590173.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07014a09.css",
+    "static/js/main.5be1b935.js"
+  ]
+}
