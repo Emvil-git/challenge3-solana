@@ -25,3 +25,14 @@ code {
     monospace;
 }
 
+a{
+  text-decoration: none;
+  transition: 0.3s;
+  color: #d4cc70cb;
+}
+
+a:hover{
+  color:#D4CB70;
+  text-shadow: 0 0 8px #d4cc702c;
+}
+

@@ -122,6 +122,14 @@ function App() {
       console.log(copyKey?.value)
       navigator.clipboard.writeText(copyKey?.value);  
     }
+
+    const tooltip = document.querySelector('.App-copytoolkit') as HTMLSpanElement;
+    tooltip.innerHTML = "Key Copied"
+  }
+
+  const mouseOut = () => {
+    const tooltip = document.querySelector('.App-copytoolkit') as HTMLSpanElement;
+    setTimeout(() => {tooltip.innerHTML = "Copy Key"} , 300)
   }
 
   const display = () => {
@@ -134,9 +142,11 @@ function App() {
               <h3 className='App-keylabel'>Your Public Key</h3>
               <section className='App-keysect'>
                 <textarea wrap='off' rows={1} readOnly value={`${walletKey}`} id='pubkey'/>
-                <button onClick={copyKey} className='App-copy'>
+                <button onMouseOut={mouseOut} onClick={copyKey} className='App-copy'>
+                
+                <span className='App-copytoolkit'>Copy Key</span>
                 <IoCopyOutline />
-                {/* <span className='App-copytoolkit'>Copy Key</span> */}
+                
                 </button>
               </section>
             </section>
