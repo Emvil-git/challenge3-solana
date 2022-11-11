@@ -17,7 +17,7 @@
 .App-main {
   position: relative;
   background-color: #2b2847;
-  /* padding: 32px; */
+  padding: 32px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -36,7 +36,7 @@
 }
 
 .App-header{
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
   top: 32px;
   right: 46px;
@@ -47,8 +47,54 @@
   font-weight: 400;
 }
 
-.App-cont{
+/* .App-cont{
   margin-top: 24px;
+} */
+
+.App-keywrap{
+  color: #ffffff8e;
+  padding: 24px 0;
+}
+
+.App-keylabel{
+  font-weight: 200;
+  font-size: 14px;
+  text-align: left;
+  color: #ffffff46;
+  padding-bottom: 4px;
+}
+
+.App-keysect{
+  display: flex;
+  width: 100%;
+  border: 1px solid #ffffff46;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+#pubkey{
+  font-size: 18px;
+  width: 100%;
+  margin-right: 16px;
+  padding-bottom: 2px;
+  overflow-x: scroll;
+}
+
+.App-copy{
+  padding: 0;
+  font-size: 24px;
+  margin-top: 2px;
+  background: none;
+  border: none;
+  color: #ffffff5d;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.App-copy:hover{
+  color: #ffffff8e;
+  text-shadow: 0px 0px 16px #ffffff46;
 }
 
 .App-btn{
@@ -74,6 +120,25 @@
 
 .App-link {
   color: #61dafb;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff5d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff8e;
+  transform: scale(1.5)
 }
 
 @keyframes App-logo-spin {

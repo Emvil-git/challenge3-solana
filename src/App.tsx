@@ -7,6 +7,7 @@ import {
   PublicKey,
   Transaction,
 } from "@solana/web3.js";
+import { IoCopyOutline } from 'react-icons/io5'
 import {useEffect , useState } from "react";
 
 // create types
@@ -117,6 +118,21 @@ function App() {
         return(
           <section className='App-cont'>
             <p>Connected account</p>
+            <section className='App-keywrap'>
+              <h3 className='App-keylabel'>Your Public Key</h3>
+              <section className='App-keysect'>
+                <p id='pubkey'>{`${walletKey}`}</p>
+                <button className='App-copy'>
+                <IoCopyOutline />
+                </button>
+              </section>
+            </section>
+            <button
+              onClick={disconnectWallet}
+              className="App-btn"
+            >
+              Disconnect Wallet
+            </button>
           </section>
         )
       case provider !== undefined && !walletKey:
