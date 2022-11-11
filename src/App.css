@@ -67,17 +67,34 @@
 .App-keysect{
   display: flex;
   width: 100%;
-  border: 1px solid #ffffff46;
+  border: 1px solid #ffffff2e;
   border-radius: 8px;
   padding: 8px 16px;
 }
 
 #pubkey{
+  resize: none;
+  color: #ffffff8e;
   font-size: 18px;
   width: 100%;
   margin-right: 16px;
-  padding-bottom: 2px;
+  height: 36px;
+  /* padding-top: 4px; */
+  /* padding-bottom: 2px; */
   overflow-x: scroll;
+  background:none;
+  border: none;
+
+  cursor: default;
+}
+
+#pubkey:focus{
+  border: none;
+  outline: none;
+}
+
+#pubkey::selection{
+  background: none;
 }
 
 .App-copy{
@@ -97,11 +114,15 @@
   text-shadow: 0px 0px 16px #ffffff46;
 }
 
+.App-copytoolkit{
+  position: absolute;
+}
+
 .App-btn{
   height: 56px;
   font-size: 18px;
   padding: 4px 24px;
-  border-radius: 56px;
+  border-radius: 8px;
   outline: 1px solid #ffffff5d;
   border: none;
   color: #ffffff8e;
@@ -124,7 +145,7 @@
 
 ::-webkit-scrollbar {
   width: 10px;
-  height: 2px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -132,12 +153,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffffff5d;
+  background: #ffffff16;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ffffff8e;
+  background: #ffffff2e;
   transform: scale(1.5)
 }
 

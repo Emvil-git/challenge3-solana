@@ -112,6 +112,18 @@ function App() {
     }
   }
 
+  const copyKey = () => {
+    const copyKey = document.getElementById("pubkey") as HTMLInputElement;
+
+    copyKey?.select();
+    copyKey.setSelectionRange(0, 99999);
+
+    if (typeof copyKey?.value === 'string'){
+      console.log(copyKey?.value)
+      navigator.clipboard.writeText(copyKey?.value);  
+    }
+  }
+
   const display = () => {
     switch(true) {
       case provider !== undefined && walletKey !== undefined:
@@ -121,9 +133,10 @@ function App() {
             <section className='App-keywrap'>
               <h3 className='App-keylabel'>Your Public Key</h3>
               <section className='App-keysect'>
-                <p id='pubkey'>{`${walletKey}`}</p>
-                <button className='App-copy'>
+                <textarea wrap='off' rows={1} readOnly value={`${walletKey}`} id='pubkey'/>
+                <button onClick={copyKey} className='App-copy'>
                 <IoCopyOutline />
+                {/* <span className='App-copytoolkit'>Copy Key</span> */}
                 </button>
               </section>
             </section>
